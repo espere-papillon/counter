@@ -1,8 +1,11 @@
 import React, {ChangeEvent, useEffect, useState} from 'react';
 import './App.css';
-import {ScoreBoard} from './ScoreBoard/ScoreBoard';
-import {ClickButtons} from "./ClickButtons/ClickButtons";
-import Settings from "./Settings";
+import {Variant1} from "./Variant1";
+import {Variant2} from './Variant2';
+import {BrowserRouter, NavLink, Route} from "react-router-dom";
+import {AppBar, Button, Container, Grid, IconButton, Toolbar, Typography} from "@material-ui/core";
+import {Menu} from "@material-ui/icons";
+import {SettingsVariant2} from "./SettingsVariant2";
 
 function App() {
 
@@ -14,6 +17,8 @@ function App() {
         }
         return localStorageValue
     }
+
+    
 
     const [count, setCount] = useState<number>(updateInfoFromLocalStorage("minValue"))
 
@@ -68,17 +73,65 @@ function App() {
     }
 
     return (
-        <div>
-            <Settings maxValue={maxValue} minValue={minValue} changeMaxValue={changeMaxValue} changeMinValue={changeMinValue} labelDisabled={labelDisabled()} saveLocalStorageHandler={saveLocalStorageHandler} />
-            <div className="App">
-                <div>
-                    <ScoreBoard counter={count} maxValue={maxValue} />
-                </div>
-                <div>
-                    <ClickButtons count={count} maxValue={maxValue} minValue={minValue} increaseNumber={increaseNumber} resetCount={resetCount}/>
-                </div>
+        <BrowserRouter>
+            <AppBar position="static">
+                <Toolbar style={{justifyContent: "space-between"}}>
+                    <IconButton edge="start" color="inherit" aria-label="menu">
+                        <Menu/>
+                    </IconButton>
+                    <Typography variant="h6">
+                        <NavLink style={{textDecoration: "none", color: "#fff"}} to="/">
+                            Counter
+                        </NavLink>
+                    </Typography>
+                    <Container fixed>
+                        <Grid container >
+                            <NavLink style={{textDecoration: "none"}} to="/variant1">
+                                <Button style={{margin: "20px"}} variant="contained" color="primary">
+                                    Version 1
+                                </Button>
+                            </NavLink>
+                            <NavLink style={{textDecoration: "none"}} to="/variant2">
+                                <Button style={{margin: "20px"}} variant="contained" color="primary">
+                                    Version 2
+                                </Button>
+                            </NavLink>
+                        </Grid>
+                    </Container>
+                </Toolbar>
+            </AppBar>
+            <div>
+                <Route path={"/variant1"} render={() =>
+                    <Variant1 maxValue={maxValue} minValue={minValue} count={count} changeMaxValue={changeMaxValue}
+                              changeMinValue={changeMinValue} saveLocalStorageHandler={saveLocalStorageHandler}
+                              labelDisabled={labelDisabled()} increaseNumber={increaseNumber}
+                              resetCount={resetCount}/>}/>
+                <Route path={"/variant2"} render={() =>
+                    <Variant2 maxValue={maxValue} minValue={minValue} count={count} changeMaxValue={changeMaxValue}
+                              changeMinValue={changeMinValue} saveLocalStorageHandler={saveLocalStorageHandler}
+                              labelDisabled={labelDisabled()} increaseNumber={increaseNumber}
+                              resetCount={resetCount}/>}/>
+                <Route path={"/settings"} render={() =>
+                    <SettingsVariant2 maxValue={maxValue} minValue={minValue} count={count} changeMaxValue={changeMaxValue}
+                              changeMinValue={changeMinValue} saveLocalStorageHandler={saveLocalStorageHandler}
+                              labelDisabled={labelDisabled()} increaseNumber={increaseNumber}
+                              resetCount={resetCount}/>}/>
+
+
+                {/*<Settings maxValue={maxValue} minValue={minValue} changeMaxValue={changeMaxValue}*/}
+                {/*          changeMinValue={changeMinValue} labelDisabled={labelDisabled()}*/}
+                {/*          saveLocalStorageHandler={saveLocalStorageHandler}/>*/}
+                {/*<div className="App">*/}
+                {/*    <div>*/}
+                {/*        <ScoreBoard counter={count} maxValue={maxValue}/>*/}
+                {/*    </div>*/}
+                {/*    <div>*/}
+                {/*        <ClickButtons count={count} maxValue={maxValue} minValue={minValue} increaseNumber={increaseNumber}*/}
+                {/*                      resetCount={resetCount}/>*/}
+                {/*    </div>*/}
+                {/*</div>*/}
             </div>
-        </div>
+        </BrowserRouter>
     );
 }
 

@@ -1,69 +1,69 @@
-.App {
-  width: 300px;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  border: 5px solid  #FFD700A9;
-  font-size: 54px;
-  border-radius: 5px;
-  margin: 30px auto auto;
-}
-.Button {
-  width: auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  border: 5px solid  #FFD700A9;
-  margin: 0 10px 10px;
-  border-radius: 5px;
-}
-.Button button {
-  width: 100px;
-  height: 30px;
-  border: #FFD700A9;
-  background-color: #FFD700A9;
-  margin: 10px;
-  border-radius: 5px;
-  font-size: 20px;
-  font-style: italic;
-}
-.Button button:focus {
-  border: #FFD700A9;
-}
-.textColor {
-  border: 5px solid #FFD700A9;
-  border-radius: 5px;
-  margin: 10px;
-  color: #FFD700A9;
-}
-.textRed {
-  border: 5px solid darkred;
-  border-radius: 5px;
-  margin: 10px;
-  color: darkred;
-  font-size: 54px;
-  font-style: italic;
-}
-.settingForm {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  margin: 10px;
-}
-.settingLabel {
-  font-size: 20px;
-  font-style: italic;
-  margin-right: 20px;
-}
-.settingInput {
-  width: 50px;
-  height: 30px;
-  border: none;
-  border-radius: 5px;
-  outline: none;
-  font-size: 20px;
-  font-style: italic;
-}
+/*.App {*/
+/*  width: 300px;*/
+/*  display: flex;*/
+/*  flex-direction: column;*/
+/*  text-align: center;*/
+/*  border: 5px solid  #FFD700A9;*/
+/*  font-size: 54px;*/
+/*  border-radius: 5px;*/
+/*  margin: 30px auto auto;*/
+/*}*/
+/*.Button {*/
+/*  width: auto;*/
+/*  display: flex;*/
+/*  flex-direction: row;*/
+/*  justify-content: space-around;*/
+/*  border: 5px solid  #FFD700A9;*/
+/*  margin: 0 10px 10px;*/
+/*  border-radius: 5px;*/
+/*}*/
+/*.Button button {*/
+/*  width: 100px;*/
+/*  height: 30px;*/
+/*  border: #FFD700A9;*/
+/*  background-color: #FFD700A9;*/
+/*  margin: 10px;*/
+/*  border-radius: 5px;*/
+/*  font-size: 20px;*/
+/*  font-style: italic;*/
+/*}*/
+/*.Button button:focus {*/
+/*  border: #FFD700A9;*/
+/*}*/
+/*.textColor {*/
+/*  border: 5px solid #FFD700A9;*/
+/*  border-radius: 5px;*/
+/*  margin: 10px;*/
+/*  color: #FFD700A9;*/
+/*}*/
+/*.textRed {*/
+/*  border: 5px solid darkred;*/
+/*  border-radius: 5px;*/
+/*  margin: 10px;*/
+/*  color: darkred;*/
+/*  font-size: 54px;*/
+/*  font-style: italic;*/
+/*}*/
+/*.settingForm {*/
+/*  display: flex;*/
+/*  justify-content: center;*/
+/*  text-align: center;*/
+/*  margin: 10px;*/
+/*}*/
+/*.settingLabel {*/
+/*  font-size: 20px;*/
+/*  font-style: italic;*/
+/*  margin-right: 20px;*/
+/*}*/
+/*.settingInput {*/
+/*  width: 50px;*/
+/*  height: 30px;*/
+/*  border: none;*/
+/*  border-radius: 5px;*/
+/*  outline: none;*/
+/*  font-size: 20px;*/
+/*  font-style: italic;*/
+/*}*/
 
 
 
